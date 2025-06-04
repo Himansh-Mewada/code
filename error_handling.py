@@ -1,4 +1,4 @@
-# Division by zero check
+# Division by zero error
 def get_quotient(numerator, denominator):
     try:
         result = numerator / denominator
@@ -14,9 +14,9 @@ def get_quotient(numerator, denominator):
 get_quotient(10, 2)
 get_quotient(5, 0)
 
-# Check for an integer input
+# Runs until a valid value is entered
 m = "0"
-while m.isdigit():
+while True:
     m = str(input("please enter an integer: "))
     try:
         int(m)
@@ -24,8 +24,9 @@ while m.isdigit():
         print("Invalid input. Please enter a whole number.")
     else:
         print(f"You entered: {m}")
+        break
 
-# To check whether a file exists or not
+# Prevents error in case a file doesn't exist
 try:
     with open("read_me.txt", "r") as file:
         return_string = file.read()
